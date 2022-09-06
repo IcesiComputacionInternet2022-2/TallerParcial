@@ -1,6 +1,7 @@
 package com.edu.icesi.bugtemplate.workingTests;
 
 
+import com.edu.icesi.bugtemplate.constant.ErrorConstants;
 import com.edu.icesi.bugtemplate.controller.UserController;
 import com.edu.icesi.bugtemplate.dto.UserDTO;
 import com.edu.icesi.bugtemplate.error.exception.UserDemoError;
@@ -47,23 +48,23 @@ public class WorkingUnitTests {
             assertEquals(HttpStatus.BAD_REQUEST, e.getHttpStatus());
             assertNotNull(e.getError());
             UserDemoError userDemoError = e.getError();
-            assertEquals("Email doesn't belong to @domain.com", userDemoError.getMessage());
-            assertEquals("CODE_UD_01", userDemoError.getCode());
+            assertEquals(ErrorConstants.CODE_UD_01.getMessage(), userDemoError.getMessage());
+            assertEquals(ErrorConstants.CODE_UD_01, userDemoError.getCode());
         }
     }
 
     @Test
     public void phoneNumberShouldBelongToColombia(){
         try {
-            userController.createUser(createDummyUser("belongTo@ndomain.com", "+583001234567"));
+            userController.createUser(createDummyUser("belongTo@domain.com", "+583001234567"));
             fail();
         }
         catch (UserDemoException e){
             assertEquals(HttpStatus.BAD_REQUEST, e.getHttpStatus());
             assertNotNull(e.getError());
             UserDemoError userDemoError = e.getError();
-            assertEquals("Phone Number doesn't belong to Colombia", userDemoError.getMessage());
-            assertEquals("CODE_UD_02", userDemoError.getCode());
+            assertEquals(ErrorConstants.CODE_UD_02.getMessage(), userDemoError.getMessage());
+            assertEquals(ErrorConstants.CODE_UD_02, userDemoError.getCode());
         }
     }
 

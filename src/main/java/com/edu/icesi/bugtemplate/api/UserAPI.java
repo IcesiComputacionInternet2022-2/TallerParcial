@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import java.util.UUID;
 
-
+@RequestMapping("/users")
 public interface UserAPI {
 
     @GetMapping("/{userId}")
     public UserDTO getUser(@PathVariable UUID userId);
 
-    @PostMapping()
+    @PostMapping("/")
     public UserDTO createUser(@RequestBody UserDTO userDTO);
 
-    @GetMapping
+    @GetMapping("/")
     public List<UserDTO> getUsers();
 
 }
