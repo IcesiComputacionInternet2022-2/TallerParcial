@@ -1,6 +1,7 @@
 package com.edu.icesi.bugtemplate.api;
 
 import com.edu.icesi.bugtemplate.dto.UserDTO;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import java.util.UUID;
 
-
+@RequestMapping("/users")
 public interface UserAPI {
 
     @GetMapping("/{userId}")

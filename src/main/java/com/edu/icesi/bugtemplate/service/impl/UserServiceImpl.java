@@ -1,9 +1,13 @@
 package com.edu.icesi.bugtemplate.service.impl;
 
+import com.edu.icesi.bugtemplate.error.exception.UserDemoError;
+import com.edu.icesi.bugtemplate.error.exception.UserDemoException;
 import com.edu.icesi.bugtemplate.model.User;
 import com.edu.icesi.bugtemplate.repository.UserRepository;
 import com.edu.icesi.bugtemplate.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +17,7 @@ import java.util.stream.StreamSupport;
 
 @AllArgsConstructor
 @Service
+@Primary
 public class UserServiceImpl implements UserService {
 
     public final UserRepository userRepository;

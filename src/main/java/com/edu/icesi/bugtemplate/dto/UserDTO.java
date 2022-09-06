@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 @Builder
+@Data
 public class UserDTO {
 
     private UUID id;
