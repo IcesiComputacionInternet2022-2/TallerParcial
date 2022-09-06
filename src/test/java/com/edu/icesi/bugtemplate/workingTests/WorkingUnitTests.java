@@ -1,6 +1,7 @@
 package com.edu.icesi.bugtemplate.workingTests;
 
 
+import com.edu.icesi.bugtemplate.constant.ErrorConstants;
 import com.edu.icesi.bugtemplate.controller.UserController;
 import com.edu.icesi.bugtemplate.dto.UserDTO;
 import com.edu.icesi.bugtemplate.error.exception.UserDemoError;
@@ -40,30 +41,30 @@ public class WorkingUnitTests {
     @Test
     public void emailShouldBelongToDomain(){
         try {
-            userController.createUser(createDummyUser("notBelongTo@notDomain.com", "+573001234567"));
+            userController.createUser(createDummyUser("notBelongTo@notDomain.com", PHONE_NUMBER+"3001234567"));
             fail();
         }
         catch (UserDemoException e){
             assertEquals(HttpStatus.BAD_REQUEST, e.getHttpStatus());
             assertNotNull(e.getError());
             UserDemoError userDemoError = e.getError();
-            assertEquals("Email doesn't belong to @domain.com", userDemoError.getMessage());
-            assertEquals("CODE_UD_01", userDemoError.getCode());
+            assertEquals(ErrorConstants.C01.getMsj(), userDemoError.getMessage());
+            assertEquals(ErrorConstants.C01.getCode(), userDemoError.getCode());
         }
     }
 
     @Test
     public void phoneNumberShouldBelongToColombia(){
         try {
-            userController.createUser(createDummyUser("belongTo@ndomain.com", "+583001234567"));
+            userController.createUser(createDummyUser("belongTo"+DOMAIN, "+583001234567"));
             fail();
         }
         catch (UserDemoException e){
             assertEquals(HttpStatus.BAD_REQUEST, e.getHttpStatus());
             assertNotNull(e.getError());
             UserDemoError userDemoError = e.getError();
-            assertEquals("Phone Number doesn't belong to Colombia", userDemoError.getMessage());
-            assertEquals("CODE_UD_02", userDemoError.getCode());
+            assertEquals(ErrorConstants.C02.getMsj(), userDemoError.getMessage());
+            assertEquals(ErrorConstants.C02.getCode(), userDemoError.getCode());
         }
     }
 
