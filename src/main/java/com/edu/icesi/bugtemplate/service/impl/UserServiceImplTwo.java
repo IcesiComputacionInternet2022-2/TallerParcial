@@ -4,6 +4,7 @@ import com.edu.icesi.bugtemplate.model.User;
 import com.edu.icesi.bugtemplate.repository.UserRepository;
 import com.edu.icesi.bugtemplate.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,5 +31,4 @@ public class UserServiceImplTwo implements UserService {
     public List<User> getUsers() {
         return StreamSupport.stream(userRepository.findAll().spliterator(),false).collect(Collectors.toList());
     }
-
 }

@@ -1,0 +1,3 @@
+com\edu\icesi\bugtemplate\workingTests\WorkingUnitTests.class
+com\edu\icesi\bugtemplate\toFixTests\NotWorkingTests.class
+com\edu\icesi\bugtemplate\BugTemplateApplicationTests.class

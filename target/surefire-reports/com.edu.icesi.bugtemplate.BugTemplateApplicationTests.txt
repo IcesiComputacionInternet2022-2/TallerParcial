@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.edu.icesi.bugtemplate.BugTemplateApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.416 s <<< FAILURE! - in com.edu.icesi.bugtemplate.BugTemplateApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [C:\Users\kesas\OneDrive - Universidad Icesi (@icesi.edu.co)\Universidad\Sexto semestre\Papu net\TallerParcial\target\classes\com\edu\icesi\bugtemplate\controller\UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.edu.icesi.bugtemplate.service.UserService' available: expected single matching bean but found 2: userServiceImpl,userServiceImplTwo
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.edu.icesi.bugtemplate.service.UserService' available: expected single matching bean but found 2: userServiceImpl,userServiceImplTwo
+
