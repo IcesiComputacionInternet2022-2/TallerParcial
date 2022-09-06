@@ -55,7 +55,7 @@ public class WorkingUnitTests {
     @Test
     public void phoneNumberShouldBelongToColombia(){
         try {
-            userController.createUser(createDummyUser("belongTo@ndomain.com", "+583001234567"));
+            userController.createUser(createDummyUser("belongTo@domain.com", "+583001234567"));
             fail();
         }
         catch (UserDemoException e){
