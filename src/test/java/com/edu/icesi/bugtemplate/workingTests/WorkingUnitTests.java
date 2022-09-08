@@ -6,7 +6,6 @@ import com.edu.icesi.bugtemplate.dto.UserDTO;
 import com.edu.icesi.bugtemplate.error.exception.UserDemoError;
 import com.edu.icesi.bugtemplate.error.exception.UserDemoException;
 import com.edu.icesi.bugtemplate.mapper.UserMapper;
-import com.edu.icesi.bugtemplate.mapper.UserMapperImpl;
 import com.edu.icesi.bugtemplate.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
