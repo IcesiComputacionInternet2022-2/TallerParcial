@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
+@RestController
 public class UserController implements UserAPI {
 
 
