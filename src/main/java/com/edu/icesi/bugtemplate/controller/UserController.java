@@ -13,6 +13,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
+@RestController
 @AllArgsConstructor
 public class UserController implements UserAPI {
 

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.edu.icesi.bugtemplate.workingTests.WorkingUnitTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.101 s <<< FAILURE! - in com.edu.icesi.bugtemplate.workingTests.WorkingUnitTests
+phoneNumberShouldBelongToColombia  Time elapsed: 0.095 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+	at com.edu.icesi.bugtemplate.workingTests.WorkingUnitTests.phoneNumberShouldBelongToColombia(WorkingUnitTests.java:59)
+
+emailShouldBelongToDomain  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+	at com.edu.icesi.bugtemplate.workingTests.WorkingUnitTests.emailShouldBelongToDomain(WorkingUnitTests.java:44)
+
