@@ -8,6 +8,7 @@ import com.edu.icesi.bugtemplate.error.exception.UserDemoException;
 import com.edu.icesi.bugtemplate.mapper.UserMapper;
 import com.edu.icesi.bugtemplate.mapper.UserMapperImpl;
 import com.edu.icesi.bugtemplate.service.UserService;
+import com.edu.icesi.bugtemplate.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -28,12 +29,12 @@ public class WorkingUnitTests {
 
     private UserController userController;
 
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @BeforeEach
     public void init(){
         UserMapper userMapper = new UserMapperImpl();
-        userService = mock(UserService.class);
+        userService = mock(UserServiceImpl.class);
         userController = new UserController(userService, userMapper);
     }
 
@@ -55,7 +56,7 @@ public class WorkingUnitTests {
     @Test
     public void phoneNumberShouldBelongToColombia(){
         try {
-            userController.createUser(createDummyUser("belongTo@ndomain.com", "+583001234567"));
+            userController.createUser(createDummyUser("belongTo@domain.com", "+583001234567"));
             fail();
         }
         catch (UserDemoException e){
