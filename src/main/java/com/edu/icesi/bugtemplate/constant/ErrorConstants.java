@@ -1,5 +1,15 @@
 package com.edu.icesi.bugtemplate.constant;
 
-public class ErrorConstants {
-    public static final String CODE_UD_01 = "dummy error";
+public enum ErrorConstants {
+    CODE_UD_01("Email doesn't belong to @domain.com"), CODE_UD_02("Phone Number doesn't belong to Colombia");
+
+    final String message;
+    ErrorConstants(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
 }
